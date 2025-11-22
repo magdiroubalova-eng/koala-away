@@ -1,0 +1,168 @@
+body {
+    color: #282425;
+    background-color: #fff1e6;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+h1,
+h2,
+h3,
+a {
+    color:#756158;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+h1 {
+    font-size: 80px;
+    text-align: center;
+    color:seashell;
+    margin: 0;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0;
+}
+h3 {
+    font-size: 24px ;
+    margin-top: 36px;
+}
+a {
+    font-style: italic;
+}
+
+.motto {
+    background-color: #f9e3d0;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+}
+.mottodva {
+    text-align: center;
+    background-color: #f9e3d0;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.kontakt {
+    background-color: #f9e3d0;
+}
+.scimtipomuzu {
+    background-color: #f9e3d0;
+}
+.paticka {
+    background-color: darkgray;
+    color:seashell;
+    text-align: center;
+    padding: 20px 0;
+}
+.foto-omne {
+    width: 200px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 30px 30px 0
+}
+.fotkysopky img {
+width: 49%;
+}
+.fotogalerie img {
+    width: 32%;
+    border: 2px solid #756158;
+    border-radius: 10px;
+}
+.foto-sopky {
+    width: 830px;
+    height: 300px;
+    border-radius: 5px;
+    border: 3px solid #fff1e6
+}
+.foto-koalavolcano {
+    width: 830px;
+    height: 300px;
+    border-radius: 5px;
+    border: 3px solid #fff1e6
+}
+.fotografie-domu {
+    width: 350px;
+    height: 230px;
+}
+.foto-jezera {
+    width: 350px;
+    height: 230px;
+}
+.foto-vodopadu {
+    width: 350px;
+    height: 230px;
+}
+.foto-kef {
+    width: 350px;
+    height: 230px;
+}
+.foto-kone {
+    width: 350px;
+    height: 230px;
+}
+.foto-hor {
+    width: 350px;
+    height: 230px;
+}
+.foto-duha {
+    width: 350px;
+    height: 230px;
+}
+.foto-letadlo {
+    width: 350px;
+    height: 230px;
+}
+.foto-friends {
+    width: 350px;
+    height: 230px;
+}
+.foto-magdaleny {
+    width: 250px;
+    height: 300px;
+    border-radius: 50px 0px 50px 50px;
+    float: left;
+    margin: 0 30px 30px 0;
+}
+section {
+    padding: 50px 15%;
+    overflow:auto
+}
+.hlavicka {
+    padding: 150px 30px;
+    background-image: url(cover.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: darkgray;
+}
+
+.menu li{
+    display: inline-block;
+}
+
+.menu a {
+    display: inline-block;
+    color: seashell;
+    text-decoration: none;
+    padding: 20px 30px;
+}
+
+.menu a:hover {
+    background-color:dimgray;
+}
