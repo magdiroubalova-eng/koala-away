@@ -167,3 +167,11 @@ section {
     background-color:dimgray;
 }
 
+@media (max-width: 768px) {
+    .fotogalerie img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
