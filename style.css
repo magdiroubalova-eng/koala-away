@@ -137,12 +137,6 @@ section {
     padding: 50px 15%;
     overflow:auto
 }
-.fotogalerie {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
-}
 .hlavicka {
     padding: 150px 30px;
     background-image: url(cover.webp);
@@ -236,4 +230,10 @@ width: 50%;
     .section-flex p {
         width: 100%;
     }
+}
+.fotogalerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
 }
