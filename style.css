@@ -166,6 +166,29 @@ section {
 .menu a:hover {
     background-color:dimgray;
 }
+
+/* Responsive layout for two-column sections */
+.section-flex {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
+max-width: 1100px;
+margin: 40px auto;
+padding: 0 20px;
+}
+
+
+.section-flex img {
+width: 50%;
+border-radius: 15px;
+}
+
+
+.section-flex p {
+width: 50%;
+}
+
 /* --- MOBILE VERSION --- */
 @media (max-width: 768px) {
 
