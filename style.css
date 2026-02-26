@@ -1,170 +1,289 @@
-body {
-    color: #282425;
-    background-color: #fff1e6;
-    font-size: 20px;
-    line-height: 1.5;
-    font-family: "Raleway", sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0;
+/* =========================
+   ZÁKLAD – mobile-first
+========================= */
+:root{
+  --bg: #fff1e6;
+  --panel: #f9e3d0;
+  --text: #282425;
+  --brand: #756158;
+  --footer-bg: darkgray;
+  --footer-fg: seashell;
+
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
 }
 
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-h1,
-h2,
-h3,
-a {
-    color:#756158;
-    font-family: "Playfair Display", serif;
-    font-style: italic;
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background-color: var(--bg);
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;   /* zachováno z původního */
+  line-height: 1.5;
+}
+
+/* Odkazy & typografie */
+h1, h2, h3, a {
+  color: var(--brand);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
 }
 
 h1 {
-    font-size: 80px;
-    text-align: center;
-    color:seashell;
-    margin: 0;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  font-size: clamp(40px, 10vw, 80px);
+  text-align: center;
+  color: seashell;
+  margin: 0;
+  text-shadow: 0 3px 10px rgba(0,0,0,.7);
 }
 h2 {
-    font-size: 40px;
-    text-align: center;
-    margin-top: 0;
+  font-size: clamp(28px, 5vw, 40px);
+  text-align: center;
+  margin: 0 0 var(--space-4);
 }
 h3 {
-    font-size: 24px ;
-    margin-top: 36px;
-}
-a {
-    font-style: italic;
+  font-size: clamp(20px, 3vw, 24px);
+  margin: var(--space-6) 0 var(--space-3);
 }
 
-.motto {
-    background-color: #f9e3d0;
-    text-align: center;
-    font-style: italic;
-    font-size: 20px;
-}
-.mottodva {
-    text-align: center;
-    background-color: #f9e3d0;
-    font-style: italic;
-    font-size: 20px;
-}
-
-.kontakt {
-    background-color: #f9e3d0;
-}
-.scimtipomuzu {
-    background-color: #f9e3d0;
-}
-.paticka {
-    background-color: darkgray;
-    color:seashell;
-    text-align: center;
-    padding: 20px 0;
-}
-.foto-omne {
-    width: 200px;
-    border-radius: 50%;
-    float: left;
-    margin: 0 30px 30px 0
-}
-.fotkysopky img {
-width: 49%;
-}
-.fotogalerie img {
-    width: 32%;
-    border: 2px solid #756158;
-    border-radius: 10px;
-}
-.foto-sopky {
-    width: 900px;
-    height: 280px;
-    border-radius: 5px;
-    border: 3px solid #fff1e6
-}
-.foto-koalavolcano {
-    width: 900px;
-    height: 280px;
-    border-radius: 5px;
-    border: 3px solid #fff1e6
-}
-.fotografie-domu {
-    width: 350px;
-    height: 230px;
-}
-.foto-jezera {
-    width: 350px;
-    height: 230px;
-}
-.foto-vodopadu {
-    width: 350px;
-    height: 230px;
-}
-.foto-kef {
-    width: 350px;
-    height: 230px;
-}
-.foto-kone {
-    width: 350px;
-    height: 230px;
-}
-.foto-hor {
-    width: 350px;
-    height: 230px;
-}
-.foto-duha {
-    width: 350px;
-    height: 230px;
-}
-.foto-letadlo {
-    width: 350px;
-    height: 230px;
-}
-.foto-friends {
-    width: 350px;
-    height: 230px;
-}
-.foto-magdaleny {
-    width: 250px;
-    height: 300px;
-    border-radius: 50px 0px 50px 50px;
-    float: left;
-    margin: 0 30px 30px 0;
-}
+/* Sekce – vzdušné okraje, ale ne přehnané na mobilu */
 section {
-    padding: 50px 15%;
-    overflow:auto
+  padding: clamp(20px, 6vw, 50px) 5%;
+  overflow: auto; /* kvůli floatům u portrétů na desktopu */
 }
+
+/* Panelové sekce */
+.motto,
+.mottodva,
+.kontakt,
+.scimtipomuzu { background-color: var(--panel); }
+
+.motto p,
+.mottodva p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* =========================
+   HLAVIČKA
+========================= */
 .hlavicka {
-    padding: 150px 30px;
-    background-image: url(cover.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  padding: clamp(70px, 15vw, 150px) 20px;
+  background-image: url("cover.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
+/* =========================
+   NAVIGACE S HAMBURGEREM (bez JS)
+========================= */
+.site-nav {
+  background: var(--footer-bg);
+  position: relative;
+}
+
+/* Skrytý checkbox */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Tlačítko hamburgeru */
+.nav-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 40px;
+  margin: var(--space-2) var(--space-4);
+  cursor: pointer;
+  border-radius: 6px;
+  /* vizuální kontrast */
+  background: rgba(0,0,0,0.15);
+}
+
+/* Ikona hamburgeru (3 proužky) */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--footer-fg);
+  position: relative;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle-label span::before { position: absolute; top: -7px; left: 0; }
+.nav-toggle-label span::after  { position: absolute; top: 7px;  left: 0; }
+
+/* Výchozí menu – skryté na mobilu */
 .menu {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: darkgray;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-4) var(--space-4);
+  display: none;
+  flex-direction: column;
+  gap: 0;
 }
 
-.menu li{
-    display: inline-block;
-}
+.menu li { margin: 0; }
 
 .menu a {
-    display: inline-block;
-    color: seashell;
-    text-decoration: none;
-    padding: 20px 30px;
+  display: block;
+  padding: 14px 12px;
+  color: var(--footer-fg);
+  text-decoration: none;
+  line-height: 1.2;
+}
+.menu a:hover { background-color: dimgray; }
+
+/* Po otevření (checkbox:checked) zobraz menu */
+.nav-toggle:checked ~ .menu {
+  display: flex;
 }
 
-.menu a:hover {
-    background-color:dimgray;
+/* Animace ikony do křížku při otevření */
+.nav-toggle:checked + .nav-toggle-label span {
+  transform: rotate(45deg);
+}
+.nav-toggle:checked + .nav-toggle-label span::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.nav-toggle:checked + .nav-toggle-label span::after {
+  opacity: 0;
 }
 
+/* Desktop (≥900px): schovej hamburger, ukaž vodorovné menu */
+@media (min-width: 900px) {
+  .nav-toggle-label { display: none; }
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .menu a { padding: 15px 20px; }
+}
 
+/* =========================
+   O MNĚ – avatar
+========================= */
+.foto-omne {
+  width: min(250px, 80%);
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px;
+}
+@media (min-width: 900px) {
+  .foto-omne {
+    float: left;
+    margin: 0 30px 30px 0;
+    width: 200px;
+  }
+}
+
+/* =========================
+   OBRÁZKY – obecně fluidní
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   SOPKY – 2 fotky responsivně
+========================= */
+.section-flex,
+.fotkysopky {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 700px) {
+  .section-flex,
+  .fotkysopky { grid-template-columns: 1fr 1fr; }
+}
+.foto-sopky,
+.foto-koalavolcano {
+  width: 100%;
+  height: auto;                 /* odstraněna pevná výška */
+  border-radius: 5px;
+  border: 3px solid var(--bg);
+  object-fit: cover;
+}
+
+/* =========================
+   FOTOGALERIE – proměníme celý .fotogalerie v grid
+========================= */
+.fotogalerie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.fotogalerie p {
+  grid-column: 1 / -1; /* text přes celou šířku gridu */
+}
+
+@media (min-width: 650px) {
+  .fotogalerie { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .fotogalerie { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* obrázky v galerii – sjednocené okraje a rámečky */
+.fotogalerie img {
+  width: 100% !important;       /* přepíše původní 32% */
+  border: 2px solid var(--brand);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* =========================
+   KONTAKT – portrét vlevo jen na desktopu
+========================= */
+.foto-magdaleny {
+  width: min(250px, 80%);
+  border-radius: 50px 0 50px 50px;
+  display: block;
+  margin: 0 auto 20px;
+}
+@media (min-width: 900px) {
+  .foto-magdaleny {
+    float: left;
+    margin: 0 30px 30px 0;
+    width: 250px;
+  }
+}
+
+/* =========================
+   PATIČKA
+========================= */
+.paticka {
+  background-color: var(--footer-bg);
+  color: var(--footer-fg);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Přístupnost: preferované omezení animací */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
